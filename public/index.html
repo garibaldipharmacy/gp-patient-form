@@ -95,7 +95,6 @@
               name="preferred_name"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="John"
-              required
             />
           </div>
 
@@ -169,7 +168,6 @@
               name="phone_primary"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="(604) 123-4567"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               required
             />
             <div class="flex items-center mr-4">
@@ -201,7 +199,6 @@
               id="phone_alternate"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="604-123-4567"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               required
             />
             <div class="flex items-center mr-4">
@@ -256,7 +253,6 @@
                 id="apartment"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="102"
-                required
               />
             </div>
 
@@ -313,6 +309,8 @@
       const phonePrimary = document.getElementById("phone_primary");
       const phoneAlternate = document.getElementById("phone_alternate");
       const healthCard = document.getElementById("bc_health_card");
+      const postalCode = document.getElementById("postal_code");
+
       const phoneMask = {
         mask: "(000) 000-0000",
       };
@@ -321,6 +319,9 @@
       const phoneAlternateMask = IMask(phoneAlternate, phoneMask);
       const healthCardMask = IMask(healthCard, {
         mask: "0000-000-000",
+      });
+      const postalCodeMask = IMask(postalCode, {
+        mask: "A0A 0A0",
       });
     </script>
   </body>
