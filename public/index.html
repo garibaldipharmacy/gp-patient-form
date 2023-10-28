@@ -128,11 +128,10 @@
             >
             <input
               name="bc_health_card"
-              type="number"
+              type="text"
               id="bc_health_card"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="1234-567-890"
-              pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
               required
             />
           </div>
@@ -165,11 +164,11 @@
               <span class="text-red-600" title="required">*</span></label
             >
             <input
-              type="number"
+              type="text"
               id="phone_primary"
               name="phone_primary"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              placeholder="604-123-4567"
+              placeholder="(604) 123-4567"
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               required
             />
@@ -197,7 +196,7 @@
               >Alternate Phone Number</label
             >
             <input
-              type="number"
+              type="text"
               name="phone_alternate"
               id="phone_alternate"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -307,7 +306,22 @@
         </button>
       </form>
     </main>
+    <script src="https://unpkg.com/imask"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/datepicker.min.js"></script>
+    <script>
+      const phonePrimary = document.getElementById("phone_primary");
+      const phoneAlternate = document.getElementById("phone_alternate");
+      const healthCard = document.getElementById("bc_health_card");
+      const phoneMask = {
+        mask: "(000) 000-0000",
+      };
+
+      const phonePrimaryMask = IMask(phonePrimary, phoneMask);
+      const phoneAlternateMask = IMask(phoneAlternate, phoneMask);
+      const healthCardMask = IMask(healthCard, {
+        mask: "0000-000-000",
+      });
+    </script>
   </body>
 </html>
