@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <header
+        class="max-w-2xl mx-auto px-4 py-8 mt-10 rounded-md space-y-6 bg-gray-100"
+      >
+        <h1 class="font-bold text-xl">
+          Patient Questionnaire for Family Physician Assignment
+        </h1>
+        <p>
+          This form is provided exclusively for recipients (and their related
+          individuals as discussed) expressly contacted by Garibaldi Pharmacy.
+          Each individual must fill and submit this form.
+        </p>
+        <p>
+          <strong
+            >Please do not share this link with anyone else and do not encourage
+            others to contact Garibaldi Pharmacy to gain access to this form. </strong
+          >A link will be provided on our website in the following weeks for
+          others wishing to register on the patient wait list.
+        </p>
+        <p>
+          The purpose of this questionnaire is to ensure that you are
+          prioritized on the patient registration list.
+        </p>
+        <p>
+          Disclaimer: Any information provided will be kept confidential. The
+          information will be disclosed solely to Terra Nova Medical Clinic
+          staff for the purpose of assigning you a family physician.
+        </p>
+      </header>
+      <form
+        class="max-w-2xl mx-auto px-4 py-12 space-y-6 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+        name="patient-registration"
+        method="POST"
+        netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
+        data-netlify="true"
+      >
+        <div class="grid gap-6 mb-6 md:grid-cols-2">
+          <!-- Legal First Name -->
+          <div>
+            <label
+              for="first_name"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Legal First Name
+              <span class="text-red-600" title="required">*</span></label
+            >
+            <input
+              type="text"
+              id="first_name"
+              name="first_name"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="Johnathon"
+              required
+            />
+          </div>
+          <!-- Legal Last Name -->
+          <div>
+            <label
+              for="last_name"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Legal Last Name
+              <span class="text-red-600" title="required">*</span></label
+            >
+            <input
+              type="text"
+              id="last_name"
+              name="last_name"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="Doe"
+              required
+            />
+          </div>
+
+          <!-- Preffered Name -->
+          <div>
+            <label
+              for="preferred_name"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Preferred Name</label
+            >
+            <input
+              type="text"
+              id="preferred_name"
+              name="preferred_name"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="John"
+              required
+            />
+          </div>
+
+          <!-- Sex -->
+          <div>
+            <label
+              for="sex"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Sex at Birth
+              <span class="text-red-600" title="required">*</span></label
+            >
+            <select
+              name="sex"
+              id="sex"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            >
+              <option selected disabled>Select Sex</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <!-- BC Health Card Number -->
+          <div>
+            <label
+              for="health_card"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >BC Health Card Number
+              <span class="text-red-600" title="required">*</span></label
+            >
+            <input
+              name="bc_health_card"
+              type="number"
+              id="bc_health_card"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="1234-567-890"
+              pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
+              required
+            />
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="relative max-w-sm">
+            <label
+              for="date_of_birth"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Date of Birth
+              <span class="text-red-600" title="required">*</span></label
+            >
+            <input
+              datepicker
+              datepicker-autohide
+              type="text"
+              name="date_of_birth"
+              id="date_of_birth"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="Select date"
+            />
+          </div>
+
+          <!-- Primary Phone Number -->
+          <div>
+            <label
+              for="phone_primary"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Primary Phone Number
+              <span class="text-red-600" title="required">*</span></label
+            >
+            <input
+              type="number"
+              id="phone_primary"
+              name="phone_primary"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="604-123-4567"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              required
+            />
+            <div class="flex items-center mr-4">
+              <input
+                name="phone_primary_is_cell_phone"
+                id="phone_primary_is_cell_phone"
+                type="checkbox"
+                value=""
+                class="w-4 h-4 mt-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600"
+              />
+              <label
+                for="phone_primary_is_cell_phone"
+                class="ml-2 mt-2 text-sm font-medium text-gray-900"
+                >Cell phone</label
+              >
+            </div>
+          </div>
+
+          <!-- Alternate Phone Number -->
+          <div>
+            <label
+              for="phone_alternate"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Alternate Phone Number</label
+            >
+            <input
+              type="number"
+              name="phone_alternate"
+              id="phone_alternate"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="604-123-4567"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              required
+            />
+            <div class="flex items-center mr-4">
+              <input
+                name="phone_alternate_is_cell_phone"
+                id="phone_alternate_is_cell_phone"
+                type="checkbox"
+                value=""
+                class="w-4 h-4 mt-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600"
+              />
+              <label
+                for="phone_alternate_is_cell_phone"
+                class="ml-2 mt-2 text-sm font-medium text-gray-900"
+                >Cell phone</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="block mb-2 font-medium text-gray-900">
+            Address <span class="text-red-600" title="required">*</span>
+          </h3>
+          <div class="grid gap-6 mb-6 md:grid-cols-2">
+            <!-- Street -->
+            <div>
+              <label
+                for="street"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Street Address</label
+              >
+              <input
+                type="text"
+                name="street"
+                id="street"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                placeholder="1870 Dowad Drive"
+                required
+              />
+            </div>
+
+            <!-- Apartment, Suite, Etc. -->
+            <div>
+              <label
+                for="apartment"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Apartment, suite, etc. (optional)</label
+              >
+              <input
+                type="text"
+                name="apartment"
+                id="apartment"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="102"
+                required
+              />
+            </div>
+
+            <!-- City -->
+            <div>
+              <label
+                for="city"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >City</label
+              >
+              <input
+                type="text"
+                name="city"
+                id="city"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Squamish"
+                required
+              />
+            </div>
+
+            <!-- Postal Code -->
+            <div>
+              <label
+                for="postal_code"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Postal Code</label
+              >
+              <input
+                type="text"
+                name="postal_code"
+                id="postal_code"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="V8B 1C4"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center transition-colors duration-200 ease-in-out"
+        >
+          Submit
+        </button>
+      </form>
+    </main>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/datepicker.min.js"></script>
+  </body>
+</html>
